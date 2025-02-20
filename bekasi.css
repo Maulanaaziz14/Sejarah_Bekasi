@@ -1,16 +1,18 @@
+/* Reset & Global Styles */
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
 }
-html{
+html {
   scroll-behavior: smooth;
 }
-/* Body */
 body {
   font-family: 'Poppins', sans-serif;
   line-height: 1.6;
-  padding: 1rem;
+  padding: 0;
+  background-color: #f5f5f5;
+  color: #333;
 }
 
 /* Header */
@@ -19,8 +21,15 @@ header {
   background: url('sejarah bekasi.jpeg') center/cover no-repeat;
   color: white;
   text-align: center;
-  padding: 2rem;
+  padding: 3rem;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  border-radius: 15px;
+  box-shadow: #1c1b1b;
 }
+
 
 header::before {
   content: "";
@@ -41,156 +50,114 @@ header::before {
   50% { background-position: 100% 50%; }
   100% { background-position: 0% 50%; }
 }
-header h1, header p, nav{
+
+header h1, header p, nav {
   position: relative;
   z-index: 2;
 }
-.container p, h1, h2{
-  margin-bottom: 20px;
+h3,p{
+margin: 10px;}
+h2{
+  margin-top: 80px;
 }
-.container h3{
-  margin-top: 20px;
-  margin-bottom: 20px;
-}
-header nav ul {
+/* Navbar */
+nav ul {
   display: flex;
-  flex-direction: column; /* Default mobile */
+  flex-direction: row;
   justify-content: center;
   list-style: none;
-  gap: 0.5rem;
+  gap: 1rem;
 }
 
-header nav ul li a {
-  color: rgb(253, 253, 253);
+nav ul li {
+  position: relative;
+}
+
+nav ul li a {
+  color: white;
   text-decoration: none;
-  padding: 0.5rem;
-  display: block;
-  text-align: center;
+  padding: 0.7rem 1.2rem;
+  font-weight: bold;
+  transition: 0.3s ease-in-out;
+  border-radius: 5px;
 }
 
-header nav ul li a:hover {
-  text-decoration: underline;
+nav ul li a:hover {
+  background: rgba(255, 255, 255, 0.2);
+  transform: scale(1.1);
 }
-/* efek gelombanggg */
 
-
-/* Main */
+/* Main Content */
 main {
   display: flex;
-  flex-direction: column; /* Default mobile */
-  gap: 1.5rem; /* Jarak antara artikel dan aside */
-  padding: 1rem;
+  flex-direction: column;
+  align-items: center;
+  gap: 2rem;
+  padding: 3rem;
 }
 
-/* Article */
 article {
-  width: 100%; /* Full width untuk mobile */
+  background: white;
+  padding: 2rem;
+  border-radius: 10px;
+  box-shadow: 0px 4px 10px rgba(0, 0, 0, 0.1);
+  max-width: 800px;
   text-align: justify;
-  margin: auto;
-  padding: 1rem 2rem;
-  
 }
 
 /* Aside */
 aside {
-  background: #e0e0e0;
-  padding: 1.5rem;
+  background: linear-gradient(135deg, #a7a6a6, rgb(236, 235, 235),#acacac);
+  padding: 2rem;
   text-align: center;
   border-radius: 10px;
   box-shadow: 2px 2px 10px rgba(0, 0, 0, 0.1);
-  margin-top: 1.5rem; /* Menambah jarak dari article */
 }
 
-aside a {
-  display: block;
-  margin-top: 0.5rem;
-  color: #333;
-  text-decoration: none;
-  font-weight: bold;
-}
-
-aside a:hover {
-  color: #007bff;
-  text-decoration: underline;
-}
 aside img {
-  max-width: 80%;
+  max-width: 50%;
   height: auto;
   border-radius: 50%;
   margin-bottom: 1rem;
 }
+/* Button */
 .btn {
   display: inline-block;
-  background: #3f2c2c;
+  background: #854203;
   color: white;
   padding: 10px 20px;
   text-decoration: none;
   font-weight: bold;
   border-radius: 5px;
-  transition: 0.3s;
+  transition: all 0.3s ease-in-out;
+  margin: 5px;
 }
 
 .btn:hover {
-  background: #361e20;
+  background: #292828;
   transform: scale(1.05);
 }
 
 /* Footer */
 footer {
-  background-color: #333;
+  background-color: #222;
   color: white;
   text-align: center;
-  padding: 1rem;
+  padding: 1.5rem;
   margin-top: 2rem;
-}
-.sejarah {
-  background: url("sejarah bekasi.jpeg") no-repeat center center/cover;
-  height: 400px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  color: white;
-  font-size: 30px;
-  font-weight: bold;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.7);
-  position: relative;
+  border-radius: 15px;
 }
 
-.sejarah::before {
-  content: "";
-  position: absolute;
-  top: 0;
-  left: 0;
-  width: 100%;
-  height: 100%;
-  background: rgba(0, 0, 0, 0.5);
-}
-/* ===== Media Query untuk Layar Besar (Tablet & Desktop) ===== */
+/* Responsiveness */
 @media (min-width: 768px) {
-    header nav ul {
-      flex-direction: row;
-      justify-content: center;
-      gap: 1rem;
-    
-  }
   main {
     flex-direction: row;
-    justify-content: space-between;
-    padding: 2rem;
+    justify-content: center;
   }
-
   article {
     flex: 3;
-    max-width: 800px;
-    margin: auto;
   }
-
   aside {
     flex: 1;
-    padding: 2rem;
-    margin-top: 0; /* Reset margin top agar sejajar dengan article */
-  }
-  aside img{
-    max-width: 50%;
   }
 }
